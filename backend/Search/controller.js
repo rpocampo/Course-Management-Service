@@ -1,8 +1,8 @@
 const courses = [
-    { course_name: "Computer Science 101", description: "Introduction to Computer Science", credits: 3 },
-    { course_name: "Mathematics 201", description: "Advanced Calculus and Algebra", credits: 4 },
-    { course_name: "Physics 101", description: "Fundamentals of Physics", credits: 3 },
-    { course_name: "Business Management 301", description: "Principles of Business Management", credits: 3 }
+    { course_name: "subject 1", description: "description 1", credits: 3 },
+    { course_name: "subject 2", description: "description 2", credits: 4 },
+    { course_name: "subject 3", description: "description 3", credits: 3 },
+    { course_name: "subject 4", description: "description 4", credits: 3 }
 ];
 
 const getCourse = (req, res) => {
