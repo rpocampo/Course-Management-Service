@@ -1,5 +1,5 @@
 {
-  "name": "course-management-service-1",
+  "name": "course-management-service",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
