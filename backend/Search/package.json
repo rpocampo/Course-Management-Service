@@ -1,8 +1,8 @@
 {
-    "name": "edusync-university",
+    "name": "course-management-service",
     "version": "1.0.0",
     "description": "EduSync University Course Search API",
-    "main": "server.js",
+    "main": "index.js",
     "scripts": {
         "start": "node server.js"
     },
