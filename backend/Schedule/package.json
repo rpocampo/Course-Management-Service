@@ -1,20 +1,16 @@
 {
-  "name": "course-management-service",
+  "name": "schedule",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "controller.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rpocampo/Course-Management-Service.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rpocampo/Course-Management-Service/issues"
-  },
-  "homepage": "https://github.com/rpocampo/Course-Management-Service#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }

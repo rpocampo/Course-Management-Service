@@ -1,10 +1,25 @@
-const sampleGet = async(request, response) => {
-    response.status(200).json({'test': 'aeri'})
-}
- const samplePost = async(request ,response) =>{
-    //console.log(request.params)
-    const {test} = request.body
-    console.log(test)
-    response.status(200).json({'test': 'test-test'})
-}
-module.exports = {sampleGet, samplePost}
+const schedule = require('./models');
+
+
+const schedule = async (req, res) => {
+    try {
+        const { course_id, day, time, room } = req.body;
+
+        if (!course_id || !day || !time || !room) {
+            return res.status(400).json({ error: 'All fields are required.' });
+        }
+
+        const schedule = new Course({ course_id, day, time, room });
+        await schedule.save();
+
+        res.status(201).json({
+            message: 'data stored successfully',
+            data: schedule
+        });
+
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error', details: error.message });
+    }
+};
+
+module.exports = { schedule };

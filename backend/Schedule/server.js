@@ -1,17 +1,23 @@
-const express = require('express')
-const myRouter = require('./router')
+const express = require('express');
+const mongoose = require('mongoose');
+const Routes = require('./router');
+require('dotenv').config();
 
-const app = express()
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json())
-mongoose.connect('kunyare merong url')
-.then(() =>{
-    app.listen(3000, () => {
-        console.log('Listen to port 3000')
-    })
-})
-.catch(error =>{
-    console.log(error)
-})
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('MongoDB Connection Error:', err));
 
-app.use(myRouter)
+// Middleware to parse JSON
+app.use(express.json());
+
+// Use battery routes
+app.use('/schedule', Routes);
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
