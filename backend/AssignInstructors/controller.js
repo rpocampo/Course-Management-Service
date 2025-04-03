@@ -1,10 +1,16 @@
-const sampleGet = async(request, response) => {
-    response.status(200).json({'test': 'aeri'})
-}
- const samplePost = async(request ,response) =>{
-    //console.log(request.params)
-    const {test} = request.body
-    console.log(test)
-    response.status(200).json({'test': 'test-test'})
-}
-module.exports = {sampleGet, samplePost}
+const assignInstructor = (req, res) => {
+    const courseId = req.params.id;
+    const { instructorName } = req.body;
+
+    if (!instructorName) {
+        return res.status(400).json({ message: "Instructor name is required" });
+    }
+
+    // Here you would typically update the database
+    res.status(200).json({
+        message: `Instructor ${instructorName} assigned to course ${courseId}`,
+    });
+};
+
+module.exports = { assignInstructor };
+    

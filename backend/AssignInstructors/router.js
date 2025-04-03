@@ -1,8 +1,9 @@
-const express = require ('express')
-const {sampleGet, samplePost} = require('../../controller')
-const router  = express.Router()
+const express = require('express');
+const { assignInstructor } = require('./controller');
+const app = express();
 
-router.get('/', sampleGet)
+const router = express.Router();
 
-router.post('/login', samplePost)
-module.exports = router
+router.post('/:id/assign-professor', assignInstructor);
+
+module.exports = router;    
