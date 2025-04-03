@@ -5,6 +5,11 @@ const courseRouter = require('./router');
 
 app.use('/course', courseRouter);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+mongoose.connect(process.env.DB)
+    .then(() =>{
+        app.listen(process.env.PORT, () =>{
+            console.log(`Connected to database and listening to port ${process.env.PORT}`)
+        })
+    }).catch(error =>{
+        console.log(error)
+    })
